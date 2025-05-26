@@ -35,8 +35,8 @@ public class HibernateConfig {
             // Create a new Configuration instance for local MySQL database
             Configuration config = new Configuration()
                     .setProperty("hibernate.connection.url", "jdbc:mysql://127.0.0.1:3306/exam-api-rest")
-                    .setProperty("hibernate.connection.username", "root")
-                    .setProperty("hibernate.connection.password", "root")
+                    .setProperty("hibernate.connection.username", "admin")
+                    .setProperty("hibernate.connection.password", "admin")
                     .setProperty("hibernate.connection.driver_class", "com.mysql.cj.jdbc.Driver")
                     .setProperty("hibernate.hbm2ddl.auto", "update")
                     .setProperty("hibernate.show_sql", "false")
