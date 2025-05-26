@@ -3,6 +3,7 @@ package com.humanbooster.dao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -59,13 +60,12 @@ public abstract class GenericDaoImpl<T, ID> implements GenericDao<T, ID> {
     /**
      * Updates an existing entity in the database.
      *
-     * @param id the ID of the entity to be updated
+     * @param entity the entity to be updated
      */
     @Override
-    public void update(ID id) {
+    public void update(T entity) {
         try (Session session = sessionFactory.openSession()) {
             session.beginTransaction();
-            T entity = session.get(entityClass, id);
             session.merge(entity);
             session.getTransaction().commit();
         }
