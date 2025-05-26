@@ -1,9 +1,6 @@
 package com.humanbooster.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 
 import java.time.LocalDateTime;
@@ -13,6 +10,7 @@ import java.time.LocalDateTime;
  * This class is mapped to a database table using JPA annotations.
  */
 @Entity
+@Table(name = "tasks")
 public class Task {
 
     @Id
