@@ -20,6 +20,7 @@ public class ServerConfig extends ResourceConfig {
     public ServerConfig() {
         packages("com.humanbooster");
         register(JacksonFeature.class);
+        register(ObjectMapperProvider.class);
     }
 
     /**
