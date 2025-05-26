@@ -3,6 +3,7 @@ package com.humanbooster.service;
 import com.humanbooster.dao.TaskDao;
 import com.humanbooster.model.Task;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -32,6 +33,7 @@ public record TaskService(TaskDao taskDao) {
      * @param task The task to update
      */
     public void updateTask(Task task) {
+        task.setUpdatedAt(LocalDateTime.now());
         taskDao.update(task);
     }
 
