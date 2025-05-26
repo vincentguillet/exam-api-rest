@@ -12,7 +12,7 @@ import java.util.List;
 
 public class App {
 
-    public static final boolean LOCAL_ENVIRONMENT = true; //Change to false if using docker
+    public static final boolean LOCAL_ENVIRONMENT = false; //Set to true if using local MySQL database, false if using docker
 
     public static void main(String[] args) {
 
