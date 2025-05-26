@@ -13,9 +13,8 @@ public class TaskDao extends GenericDaoImpl<Task,Long> {
      * Constructor for TaskDao.
      *
      * @param sessionFactory the Hibernate SessionFactory used to create sessions
-     * @param entityClass    the class type of the entity this DAO manages
      */
-    public TaskDao(SessionFactory sessionFactory, Class<Task> entityClass) {
-        super(sessionFactory, entityClass);
+    public TaskDao(SessionFactory sessionFactory) {
+        super(sessionFactory, Task.class);
     }
 }
