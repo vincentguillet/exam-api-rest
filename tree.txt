@@ -1,0 +1,54 @@
+exam-api-rest/
+?   .gitignore
+?   pom.xml
+?   README.md
+?   tree.txt
+?   
+????.idea
+?       .gitignore
+?
+????.mvn
+????annexes
+?       Cahier des charges.md
+?
+????docker
+?       docker-compose.yml
+?       Dockerfile
+?       wait-for-it.sh
+?
+????requests
+?       TaskRequets.http
+?
+????src
+    ????main
+        ????java
+        ?   ????com
+        ?       ????humanbooster
+        ?           ?   App.java
+        ?           ?
+        ?           ????config
+        ?           ?       HibernateConfig.java
+        ?           ?       ObjectMapperProvider.java
+        ?           ?       ServerConfig.java
+        ?           ?
+        ?           ????controller
+        ?           ?       GenericController.java
+        ?           ?       GenericControllerImpl.java
+        ?           ?       TaskController.java
+        ?           ?
+        ?           ????dao
+        ?           ?       GenericDao.java
+        ?           ?       GenericDaoImpl.java
+        ?           ?       TaskDao.java
+        ?           ?
+        ?           ????factory
+        ?           ?       DataFactory.java
+        ?           ?
+        ?           ????model
+        ?           ?       Task.java
+        ?           ?
+        ?           ????service
+        ?                   TaskService.java
+        ?
+        ????resources
+                hibernate.cfg.xml
