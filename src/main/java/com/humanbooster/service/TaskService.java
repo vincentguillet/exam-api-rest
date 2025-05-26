@@ -29,10 +29,10 @@ public record TaskService(TaskDao taskDao) {
 
     /**
      * Updates an existing task in the database.
-     * @param id The ID of the task to update
+     * @param task The task to update
      */
-    public void updateTask(Long id) {
-        taskDao.update(id);
+    public void updateTask(Task task) {
+        taskDao.update(task);
     }
 
     /**
