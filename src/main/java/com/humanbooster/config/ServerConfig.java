@@ -36,16 +36,16 @@ public class ServerConfig extends ResourceConfig {
 
         // Create a ServletHolder for the Jersey ServletContainer
         ServletHolder servlet = new ServletHolder(new ServletContainer(config));
-        Server server = new Server(80);
+        Server server = new Server(3000);
 
         // Set the context path and add the servlet to handle requests
-        ServletContextHandler context = new ServletContextHandler(server, "/");
+        ServletContextHandler context = new ServletContextHandler(server, "/api");
         context.setServer(server);
         context.addServlet(servlet, "/*");
 
         try {
             server.start();
-            System.out.println("Serveur démarré sur le port 80");
+            System.out.println("Serveur démarré sur le port 3000");
             server.join();
         } catch (Exception e) {
             System.out.println("Echec lors du lancement du serveur: " + e.getMessage());
