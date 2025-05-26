@@ -16,7 +16,7 @@ import java.util.List;
  */
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class GenericControllerImpl<T, ID> implements GenericController<T, ID>, GenericDao<T, ID> {
+public class GenericControllerImpl<T, ID> implements GenericController<T, ID> {
 
     protected final SessionFactory sessionFactory;
     private final GenericDao<T, ID> dao;
@@ -64,8 +64,8 @@ public class GenericControllerImpl<T, ID> implements GenericController<T, ID>, G
     @PUT
     @Path("/{id}")
     @Override
-    public void update(@PathParam("id") ID id) {
-        dao.update(id);
+    public void update(@PathParam("id") ID id, T entity) {
+        dao.update(entity);
     }
 
     /**
