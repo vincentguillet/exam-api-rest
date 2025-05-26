@@ -1,0 +1,35 @@
+name: exam-api-rest
+services:
+  mysql:
+    image: mysql:8.3
+    container_name: mysql
+
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: exam-api-rest
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3366:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  app:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: app
+    depends_on:
+      - mysql
+    restart: on-failure
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: exam-api-rest
+      DB_USER: user
+      DB_PASSWORD: password
+    ports:
+      - "3000:3000"
+
+volumes:
+  mysql_data:
