@@ -1,0 +1,31 @@
+### GET /tasks - Liste toutes les tâches. Réponse attendue: 200 + liste JSON
+GET http://localhost:3000/api/tasks
+
+
+### GET /tasks/{id} - Retourne une tâche spécifique. Réponse attendue: 200 ou 404
+GET http://localhost:3000/api/tasks/1
+
+
+### POST /tasks - Crée une nouvelle tâche. Corps attendu: JSON (sans id). Réponse attendue: 201 + tâche créée
+POST http://localhost:3000/api/tasks
+Content-Type: application/json
+
+{
+  "title": "Nouvelle tâche",
+  "description": "Description de la nouvelle tâche"
+}
+
+
+### PUT /tasks/{id} - Met à jour une tâche existante. Corps attendu: JSON complet. Réponse attendue: 200 ou 404
+PUT http://localhost:3000/api/tasks/2
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "Tâche mise à jour",
+  "description": "Description mise à jour de la tâche"
+}
+
+
+### DELETE /tasks/{id} - Supprime une tâche. Réponse attendue: 204 ou 404
+DELETE http://localhost:3000/api/tasks/3
